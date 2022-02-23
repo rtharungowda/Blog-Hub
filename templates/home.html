@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bog-Hub</title>
-</head>
-<body>
-    <h1>Home Page</h1>
-</body>
-</html>
+{% extends 'layout.html' %}
+{% block content %}
+    {% for post in posts %}
+        <div>
+            <h2>{{ post.title }}</h2>
+            <span>Posted by <b>{{ post.author }}</b> on {{post.date}}</span>
+            <p>{{ post.body }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
